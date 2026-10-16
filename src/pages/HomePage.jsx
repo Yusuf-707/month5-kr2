@@ -17,10 +17,7 @@ export default function HomePage() {
     }, [])
     return (
         <div>
-            <h1>Задачи</h1>
-            <h1>Форма добавления</h1>
             <TaskForm getTask={getTask} />
-            <hr />
             <TaskCard tasks={task} />
         </div>
     )

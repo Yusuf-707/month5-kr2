@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function ModalEdit() {
+export default function ModalEdit({ h1, h3, p }) {
   return (
-    <div>ModalEdit</div>
-  )
+    <div className="value-card">
+      <h1>{h1}</h1>
+      <h3>{h3}</h3>
+      <p>{p}</p>
+    </div>
+  );
 }

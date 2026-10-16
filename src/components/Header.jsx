@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 
 export default function Header() {
   return (
-    <div>
-        <Link to="/">Task Manager</Link>
-        <Link to="/about">О приложении</Link>
-    </div>
+    <header>
+        <NavLink className='NavLink' to="/">Task Manager</NavLink>
+        <NavLink className='NavLink' to="/about">О приложении</NavLink>
+    </header>
   )
 }

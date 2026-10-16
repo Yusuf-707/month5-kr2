@@ -1,1 +1,466 @@
-@import "tailwindcss"
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800;900&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+body {
+    width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: 'Raleway', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+header .NavLink {
+    width: auto;
+    height: 24px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+}
+
+header .NavLink.active {
+    border-bottom: 2px solid rgba(4, 117, 255, 1);
+}
+
+/* TaskForm */
+
+.taskForm {
+    display: flex;
+    flex-flow: column;
+    gap: 40px;
+}
+
+.taskForm .taskForm-text {
+    color: rgba(4, 117, 255, 1);
+    height: 42px;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 100%;
+    font-style: normal;
+}
+
+.tft-1 {
+    width: 128px
+}
+
+.tft-2 {
+    width: 338px
+}
+
+.taskForm form {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.taskForm form input,
+.taskForm form .priority-selector {
+    width: 362px;
+    height: 50px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 50px;
+    padding-left: 10px;
+}
+
+.taskForm form .priority-selector input {
+    width: 0;
+    height: 0;
+}
+
+.taskForm form .priority-selector {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.taskForm form .priority-selector div {
+    display: flex;
+    gap: 5px;
+}
+
+.taskForm form .priority-selector div label {
+    width: 72px;
+    height: 24px;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: rgba(255, 255, 255, 1);
+    padding-top: 4px;
+}
+
+.taskForm form .priority-selector div .normal {
+    background-color: rgba(0, 210, 28, 1);
+}
+
+.taskForm form .priority-selector div .middle {
+    background-color: rgba(255, 201, 7, 1);
+}
+
+.taskForm form .priority-selector div .high {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.errorMessage {
+    color: rgba(255, 0, 0, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.taskForm-button {
+    grid-column: 2;
+    width: 195px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    background-color: rgba(83, 180, 255, 1);
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+}
+
+/* TaskCard */
+
+.taskCard {
+    width: 100%;
+    height: auto;
+}
+
+.taskCard .taskCard-header {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.taskCard-header-text {
+    color: rgba(4, 117, 255, 1);
+    width: 206px;
+    height: 36px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.statusCards {
+    width: 244px;
+    height: 42px;
+    border-radius: 34px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.cards {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 75px;
+}
+
+.card {
+    width: 283px;
+    height: 300px;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 30px;
+    gap: 10px;
+}
+
+.card-priority {
+    width: 72px;
+    height: 24px;
+    border-radius: 30px;
+    text-align: center;
+    margin-left: 70%;
+    color: rgba(255, 255, 255, 1);
+}
+
+.card-priority-normal {
+    background-color: rgba(0, 210, 28, 1);
+}
+
+.card-priority-middle {
+    background-color: rgba(255, 201, 7, 1);
+}
+
+.card-priority-high {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.card-title {
+    width: 162px;
+    height: 24px;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 1);
+    line-height: 100%;
+    text-wrap: nowrap;
+}
+
+.card-description {
+    width: 260px;
+    height: 51px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.card-buttons {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 30%;
+}
+
+.card-btn {
+    width: 191px;
+    height: 28px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 30px;
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+}
+
+/* ABOUT */
+
+.about {
+    width: 100%;
+    height: 1217px;
+    display: flex;
+    flex-flow: column;
+    gap: 80px;
+}
+
+.hero-section {
+    width: 100%;
+    height: 642px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
+
+.hero-section section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    gap: 70px;
+}
+
+.hero-section section p {
+    width: 587px;
+    height: 72px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.hero-section section button {
+    width: 244px;
+    height: 42px;
+    border-radius: 34px;
+    border: 2px solid rgba(4, 117, 255, 1);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.hero-section section img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.value-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-section-h1 {
+    width: 311px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    color: rgba(4, 117, 255, 1);
+}
+
+.value-section-p {
+    width: 749px;
+    height: 48px;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.values-grid {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.value-card {
+    display: flex;
+    flex-flow: column;
+    gap: 2px;
+}
+
+.value-card h1 {
+    width: auto;
+    height: 79px;
+    font-weight: 600;
+    font-size: 65px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.value-card h3 {
+    width: auto;
+    height: 30px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.value-card p {
+    width: 311px;
+    height: 72px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+}
+
+/* TaskDateil */
+
+.taskDetail {
+    width: 626px;
+    height: 300px;
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    padding: 25px;
+}
+
+.close {
+    display: flex;
+    gap: 15px;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 100%;
+    color: rgba(4, 117, 255, 1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.detail {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.detail-text {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.detail-card-title {
+    width: 220px;
+    height: 24px;
+    font-family: 400;
+    font-size: 24px;
+}
+
+.detail-card-description {
+    width: 444px;
+    height: 102px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.detail-card-priority {
+    width: 72px;
+    height: 24px;
+    border-radius: 30px;
+    text-align: center;
+    /* margin-left: 70%; */
+    color: rgba(255, 255, 255, 1);
+}
+
+.detail-card-priority-normal {
+    background-color: rgba(0, 210, 28, 1);
+}
+
+.detail-card-priority-middle {
+    background-color: rgba(255, 201, 7, 1);
+}
+
+.detail-card-priority-high {
+    background-color: rgba(255, 0, 0, 1);
+}
+.detail-card-buttons {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.detail-delete-btn,
+.detail-update-btn {
+    width: 37px;
+    height: 37px;
+    
+}

@@ -20,12 +20,6 @@
       "description": "1 серия",
       "status": true,
       "priority": "low"
-    },
-    {
-      "title": "dsadD",
-      "discription": "DSADad",
-      "priority": "normal",
-      "id": "9TdkgbqBDHI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
